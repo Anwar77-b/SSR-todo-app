@@ -1,0 +1,9 @@
+extends base
+block content 
+    .intro-container
+        h1 Welcome to To-Do List App
+        p Manage your tasks efficiently with our app.
+        if (user)
+            a(href="/tasks") Go to tasks section
+        else
+            a(href="/signup") Get Started

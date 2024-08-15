@@ -1,0 +1,26 @@
+header
+    .container
+        h2.logo
+            a(href="/home") TaskTrak
+        .sandwitch 
+            p 
+            p 
+            p 
+        nav
+            ul
+                li
+                    a(href="/home") Home
+                if user 
+                    li
+                        a(href="/tasks") My tasks
+                    li
+                        a.avatar(href="/user")=`${user.name[0].toUpperCase()}` 
+                            //- span=user.name.toUpperCase()
+
+                    li
+                        a.logout logout
+                else    
+                    li
+                        a(href="/signup") Signup
+                    li
+                        a(href="/login") login

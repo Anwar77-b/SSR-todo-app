@@ -1,0 +1,18 @@
+extends base
+block content
+    .tasks-container
+        form.taskForm
+            div
+                input(type="text" id="taskInput")
+                input(type="datetime-local" id="taskDate")
+            div
+                input(type="submit" id="submit") 
+        .tasks
+            each task in tasks
+                div(data-taskId=task.id)
+                    input(type="checkbox" checked=task.done)
+                    p
+                        span=task.name
+                        if task.dueDate
+                            span=`${task.dueDate}`.slice(0, 21)
+                    button#remove x
